@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Online</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function enviarPedido(producto, precio) {
+            var mensaje = `Hola, quiero comprar: ${producto} por ${precio}.`;
+            var url = `https://api.whatsapp.com/send?phone=5580972551&text=${encodeURIComponent(mensaje)}`;
+            window.open(url, '_blank');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Tienda Online</h1>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="inicio">
+        <h2>Bienvenido a la tienda virtual.</h2>
+        <p>Encuentra los mejores productos al mejor precio.</p>
+    </section>
+    
+    <section id="productos">
+        <h2>Nuestros Productos</h2>
+        <div class="producto">
+            <img src="https://m.media-amazon.com/images/I/61cD+FpuA9L._AC_SX522_.jpg" alt="Producto 1">
+            <h3>Colcha MIMI Mouse</h3>
+            <p>Descripción breve del producto.</p>
+            <span class="precio">$500.00</span>
+            <button onclick="enviarPedido('Colcha MIMI Mouse', '$500.00')">Añadir al carrito</button>
+        </div>
+        <div class="producto">
+            <img src="https://m.media-amazon.com/images/I/51Jy6lC3V4L._AC_SL1000_.jpg" alt="Producto 2">
+            <h3>Colcha Gatos</h3>
+            <p>Descripción breve del producto.</p>
+            <span class="precio">$500.00</span>
+            <button onclick="enviarPedido('Colcha Gatos', '$500.00')">Añadir al carrito</button>
+        </div>
+        <div class="producto">
+            <img src="https://i5.walmartimages.com.mx/mg/gm/3pp/asr/8d8dae74-629d-42ec-a038-36bbf0c9077e.a319667c2914ded9e83a23a2ca9787b5.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF  " alt="Producto 2">
+            <h3>Cobertor Pachicalientito Sasha</h3>
+            <p>Descripción breve del producto.</p>
+            <span class="precio">$500.00</span>
+            <button onclick="enviarPedido('Cobertor Pachicalientito Sasha', '$500.00')">Añadir al carrito</button>
+        </div>
+    </section>
+    
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <p>Al dar clic en Añadir al carrito, automaticamente se enviara un mensaje a mi WhatsApp.</p>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Tienda Online de Alejandra Sevilla. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
