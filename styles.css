@@ -1,90 +1,104 @@
 body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f8f9fa;
-    color: #333;
+    background-color: #f4f4f4;
+    font-family: 'Segoe UI', sans-serif;
 }
 
 header {
-    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    background-color: #222;
     color: white;
-    padding: 1.5rem;
-    text-align: center;
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.2rem;
-    transition: color 0.3s;
-}
-
-nav ul li a:hover {
-    color: #333;
-}
-
-section {
-    padding: 40px 20px;
-    text-align: center;
-}
-
-.producto {
-    background: white;
     padding: 20px;
-    margin: 15px;
-    display: inline-block;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
+    text-align: center;
 }
 
-.producto:hover {
-    transform: scale(1.05);
+.img-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 40px;
 }
 
-.producto img {
-    max-width: 200px;
-    border-radius: 12px;
-    font-weight: 10px;
+.card {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.card img {
+    width: 100%;
     height: 200px;
-}
-
-.precio {
-    color: #e74c3c;
-    font-size: 1.4em;
-    font-weight: bold;
-}
-
-button {
-    background: #27ae60;
-    color: white;
-    padding: 12px 20px;
-    border: none;
+    object-fit: cover;
+    border-radius: 10px;
     cursor: pointer;
-    border-radius: 8px;
-    font-size: 1rem;
+}
+
+.card h2 {
+    margin: 10px 0 5px;
+    font-size: 18px;
+}
+
+.card .price {
+    color: #28a745;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card button {
+    background-color: #007bff;
+    border: none;
+    padding: 10px 15px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
     transition: background 0.3s;
 }
 
-button:hover {
-    background: #2ecc71;
+.card button:hover {
+    background-color: #0056b3;
+}
+
+.ful-img {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0,0, 0.9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
+
+.ful-img img {
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+.ful-img #carDetails {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.ful-img span {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
 }
 
 footer {
-    background: #222;
+    background-color: #222;
     color: white;
     text-align: center;
     padding: 15px;
-    margin-top: 30px;
+    margin-top: 40px;
 }
