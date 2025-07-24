@@ -3,65 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda Online</title>
-    <link rel="stylesheet" href="styles.css">
-    <script>
-        function enviarPedido(producto, precio) {
-            var mensaje = `Hola, quiero comprar: ${producto} por ${precio}.`;
-            var url = `https://api.whatsapp.com/send?phone=5580972551&text=${encodeURIComponent(mensaje)}`;
-            window.open(url, '_blank');
-        }
-    </script>
+    <title>Autos Americanos - Plataforma de Venta</title>
+    <link rel="stylesheet" href="styleurc.css">
 </head>
 <body>
     <header>
-        <h1>Tienda Online</h1>
-        <nav>
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#productos">Productos</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
+        <h1>Venta de Autos Americanos</h1>
+        <p>Tu próxima aventura comienza aquí 🚗</p>
     </header>
-    
-    <section id="inicio">
-        <h2>Bienvenido a la tienda virtual.</h2>
-        <p>Encuentra los mejores productos al mejor precio.</p>
-    </section>
-    
-    <section id="productos">
-        <h2>Nuestros Productos</h2>
-        <div class="producto">
-            <img src="https://m.media-amazon.com/images/I/61cD+FpuA9L._AC_SX522_.jpg" alt="Producto 1">
-            <h3>Colcha MIMI Mouse</h3>
-            <p>Descripción breve del producto.</p>
-            <span class="precio">$500.00</span>
-            <button onclick="enviarPedido('Colcha MIMI Mouse', '$500.00')">Añadir al carrito</button>
+
+    <div class="ful-img" id="fulImgBox">
+        <img src="imgs/1.jpg" id="fulImg" alt="">
+        <div id="carDetails"></div>
+        <span onclick="closeImg()">X</span>
+    </div>
+
+    <section class="img-gallery">
+        <div class="card">
+            <img src="./IMAGENES/7207946SRT.webp" onclick="openFulImg(this.src, 'Grand Cherokee SRT', '$950,000 MXN')" alt="Grand Cherokee">
+            <h2>Grand Cherokee SRT</h2>
+            <p class="price">$950,000 MXN</p>
+            <button onclick="openFulImg('./IMAGENES/7207946SRT.webp', 'Grand Cherokee', '$950,000 MXN')">Ver detalles</button>
         </div>
-        <div class="producto">
-            <img src="https://m.media-amazon.com/images/I/51Jy6lC3V4L._AC_SL1000_.jpg" alt="Producto 2">
-            <h3>Colcha Gatos</h3>
-            <p>Descripción breve del producto.</p>
-            <span class="precio">$500.00</span>
-            <button onclick="enviarPedido('Colcha Gatos', '$500.00')">Añadir al carrito</button>
+        <div class="card">
+            <img src="./IMAGENES/2024-dodge-durango-srt-hellcat-front-left.avif" onclick="openFulImg(this.src, 'Durango SRT Hellcat', '$1,900,000 MXN')" alt="Durango">
+            <h2>Durango SRT Hellcat</h2>
+            <p class="price">$1,900,000 MXN</p>
+            <button onclick="openFulImg('./IMAGENES/2024-dodge-durango-srt-hellcat-front-left.avif', 'Durango SRT Hellcat', '$1,200,000 MXN')">Ver detalles</button>
         </div>
-        <div class="producto">
-            <img src="https://i5.walmartimages.com.mx/mg/gm/3pp/asr/8d8dae74-629d-42ec-a038-36bbf0c9077e.a319667c2914ded9e83a23a2ca9787b5.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF  " alt="Producto 2">
-            <h3>Cobertor Pachicalientito Sasha</h3>
-            <p>Descripción breve del producto.</p>
-            <span class="precio">$500.00</span>
-            <button onclick="enviarPedido('Cobertor Pachicalientito Sasha', '$500.00')">Añadir al carrito</button>
+        <div class="card">
+            <img src="./IMAGENES/zl1.jpg" onclick="openFulImg(this.src, 'Camaro ZL1', '$1,500,000 MXN')" alt="Camaro">
+            <h2>Camaro ZL1</h2>
+            <p class="price">$1,500,000 MXN</p>
+            <button onclick="openFulImg('./IMAGENES/zl1.jpg', 'Camaro ZL1', '$1,500,000 MXN')">Ver detalles</button>
         </div>
+        <div class="card">
+            <img src="./IMAGENES/challenger.jpg" onclick="openFulImg(this.src, 'Challenger', '$1,250,000 MXN')" alt="Challenger">
+            <h2>Challenger R/T</h2>
+            <p class="price">$1,250,000 MXN</p>
+            <button onclick="openFulImg('./IMAGENES/challenger.jpg', 'Challenger R/T', '$1,250,000 MXN')">Ver detalles</button>
+        </div>
+        <div class="card">
+            <img src="./IMAGENES/chrysler-300-2018-black-2.jpg" onclick="openFulImg(this.src, 'Chrysler 300', '$1,000,000 MXN')" alt="Chrysler 300">
+            <h2>Chrysler 300c</h2>
+            <p class="price">$1,000,000 MXN</p>
+            <button onclick="openFulImg('./IMAGENES/chrysler-300-2018-black-2.jpg', 'Chrysler 300', '$1,000,000 MXN')">Ver detalles</button>
+        </div>
+        <div class="card">
+            <img src="./IMAGENES/ford-mustang-shelby-gt500-5k-k3.jpg" onclick="openFulImg(this.src, 'Mustang Shelby gt500', '$1,000,000 MXN')" alt="Mustang Shelby gt500">
+            <h2>Mustang Shelby gt500c</h2>
+            <p class="price">$2,000,000 MXN</p>
+            <button onclick="openFulImg('./IMAGENES/ford-mustang-shelby-gt500-5k-k3.jpg', 'Mustang Shelby gt500', '$2,000,000 MXN')">Ver detalles</button>
+        </div>
+        <div class="card">
+            <img src="./IMAGENES/R.jpg" onclick="openFulImg(this.src, 'Charger SRT', '$1,900,000 MXN')" alt="Charger SRT">
+            <h2>Charger SRT</h2>
+            <p class="price">$1,900,000 MXN</p>
+            <button onclick="openFulImg('./IMAGENES/R.jpg', 'Charger SRT', '$1,900,000 MXN')">Ver detalles</button>
+        </div>
+        <div class="card">
+            <img src="./IMAGENES/ram.jpg" onclick="openFulImg(this.src, 'RAM TRX', '$2,100,000 MXN')" alt="RAM TRX">
+            <h2>RAM TRX</h2>
+            <p class="price">$2,100,000 MXN</p>
+            <button onclick="openFulImg('./IMAGENES/ram.jpg', 'RAM TRX', '$2,100,000 MXN')">Ver detalles</button>
+        </div>
+  
     </section>
-    
-    <section id="contacto">
-        <h2>Contacto</h2>
-        <p>Al dar clic en Añadir al carrito, automaticamente se enviara un mensaje a mi WhatsApp.</p>
-    </section>
-    
+
     <footer>
-        <p>&copy; 2025 Tienda Online de Alejandra Sevilla. Todos los derechos reservados.</p>
+        <p>Contacto: ventas@autosamericanos.mx | Tel: 55 1234 5678</p>
+        <p>Geovanni Ibarra © </p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
