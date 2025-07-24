@@ -1,104 +1,80 @@
-body {
-    background-color: #f4f4f4;
-    font-family: 'Segoe UI', sans-serif;
-}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autos Americanos - Plataforma de Venta</title>
+    <link rel="stylesheet" href="styleurc.css">
+</head>
+<body>
+    <header>
+        <h1>Venta de Autos Americanos</h1>
+        <p>Tu próxima aventura comienza aquí 🚗</p>
+    </header>
 
-header {
-    background-color: #222;
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
+    <div class="ful-img" id="fulImgBox">
+        <img src="imgs/1.jpg" id="fulImg" alt="">
+        <div id="carDetails"></div>
+        <span onclick="closeImg()">X</span>
+    </div>
 
-.img-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    padding: 40px;
-}
+    <section class="img-gallery">
+        <div class="card">
+            <img src="./IMAGENES/7207946SRT.webp" onclick="openFulImg(this.src, 'Grand Cherokee SRT', '$950,000 MXN')" alt="Grand Cherokee">
+            <h2>Grand Cherokee SRT</h2>
+            <p class="price">$950,000 MXN</p>
+            <button onclick="openFulImg('./IMAGENES/7207946SRT.webp', 'Grand Cherokee', '$950,000 MXN')">Ver detalles</button>
+        </div>
+        <div class="card">
+            <img src="./IMAGENES/2024-dodge-durango-srt-hellcat-front-left.avif" onclick="openFulImg(this.src, 'Durango SRT Hellcat', '$1,900,000 MXN')" alt="Durango">
+            <h2>Durango SRT Hellcat</h2>
+            <p class="price">$1,900,000 MXN</p>
+            <button onclick="openFulImg('./IMAGENES/2024-dodge-durango-srt-hellcat-front-left.avif', 'Durango SRT Hellcat', '$1,200,000 MXN')">Ver detalles</button>
+        </div>
+        <div class="card">
+            <img src="./IMAGENES/zl1.jpg" onclick="openFulImg(this.src, 'Camaro ZL1', '$1,500,000 MXN')" alt="Camaro">
+            <h2>Camaro ZL1</h2>
+            <p class="price">$1,500,000 MXN</p>
+            <button onclick="openFulImg('./IMAGENES/zl1.jpg', 'Camaro ZL1', '$1,500,000 MXN')">Ver detalles</button>
+        </div>
+        <div class="card">
+            <img src="./IMAGENES/challenger.jpg" onclick="openFulImg(this.src, 'Challenger', '$1,250,000 MXN')" alt="Challenger">
+            <h2>Challenger R/T</h2>
+            <p class="price">$1,250,000 MXN</p>
+            <button onclick="openFulImg('./IMAGENES/challenger.jpg', 'Challenger R/T', '$1,250,000 MXN')">Ver detalles</button>
+        </div>
+        <div class="card">
+            <img src="./IMAGENES/chrysler-300-2018-black-2.jpg" onclick="openFulImg(this.src, 'Chrysler 300', '$1,000,000 MXN')" alt="Chrysler 300">
+            <h2>Chrysler 300c</h2>
+            <p class="price">$1,000,000 MXN</p>
+            <button onclick="openFulImg('./IMAGENES/chrysler-300-2018-black-2.jpg', 'Chrysler 300', '$1,000,000 MXN')">Ver detalles</button>
+        </div>
+        <div class="card">
+            <img src="./IMAGENES/ford-mustang-shelby-gt500-5k-k3.jpg" onclick="openFulImg(this.src, 'Mustang Shelby gt500', '$1,000,000 MXN')" alt="Mustang Shelby gt500">
+            <h2>Mustang Shelby gt500c</h2>
+            <p class="price">$2,000,000 MXN</p>
+            <button onclick="openFulImg('./IMAGENES/ford-mustang-shelby-gt500-5k-k3.jpg', 'Mustang Shelby gt500', '$2,000,000 MXN')">Ver detalles</button>
+        </div>
+        <div class="card">
+            <img src="./IMAGENES/R.jpg" onclick="openFulImg(this.src, 'Charger SRT', '$1,900,000 MXN')" alt="Charger SRT">
+            <h2>Charger SRT</h2>
+            <p class="price">$1,900,000 MXN</p>
+            <button onclick="openFulImg('./IMAGENES/R.jpg', 'Charger SRT', '$1,900,000 MXN')">Ver detalles</button>
+        </div>
+        <div class="card">
+            <img src="./IMAGENES/ram.jpg" onclick="openFulImg(this.src, 'RAM TRX', '$2,100,000 MXN')" alt="RAM TRX">
+            <h2>RAM TRX</h2>
+            <p class="price">$2,100,000 MXN</p>
+            <button onclick="openFulImg('./IMAGENES/ram.jpg', 'RAM TRX', '$2,100,000 MXN')">Ver detalles</button>
+        </div>
+  
+    </section>
 
-.card {
-    background: white;
-    border-radius: 10px;
-    padding: 15px;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
+    <footer>
+        <p>Contacto: ventas@autosamericanos.mx | Tel: 55 1234 5678</p>
+        <p>Geovanni Ibarra © </p>
+    </footer>
 
-.card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-.card h2 {
-    margin: 10px 0 5px;
-    font-size: 18px;
-}
-
-.card .price {
-    color: #28a745;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.card button {
-    background-color: #007bff;
-    border: none;
-    padding: 10px 15px;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-.card button:hover {
-    background-color: #0056b3;
-}
-
-.ful-img {
-    width: 100%;
-    height: 100vh;
-    background-color: rgba(0, 0,0, 0.9);
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    z-index: 99;
-    padding: 20px;
-    color: white;
-    text-align: center;
-}
-
-.ful-img img {
-    width: 80%;
-    max-width: 500px;
-    border-radius: 10px;
-}
-
-.ful-img #carDetails {
-    margin-top: 20px;
-    font-size: 18px;
-}
-
-.ful-img span {
-    position: absolute;
-    top: 5%;
-    right: 5%;
-    font-size: 30px;
-    cursor: pointer;
-    color: white;
-}
-
-footer {
-    background-color: #222;
-    color: white;
-    text-align: center;
-    padding: 15px;
-    margin-top: 40px;
-}
+    <script src="script.js"></script>
+</body>
+</html>
